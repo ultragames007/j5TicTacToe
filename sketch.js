@@ -1,23 +1,38 @@
+
+let on = false;
 function setup() {
-    createCanvas(400,400);
-    background(153, 153, 255);
-    }
-    var x=0;
-    var y=0;
-    var z=0;
+  createCanvas(400, 400);
+  background(0);
+}
 
 function draw() {
-
-    noStroke();
-    //stroke(255,0,0); //borde
-    strokeWeight(3); //grosor
-    fill(200, mouseX-x, mouseY+z); //relleno va antes de dibujar
-    ellipse(mouseX,mouseY,50,50);
+    //se puede poner if (on) xq on es true o false nomas. o if(on==true)
+    if(on)
+    {
+       background(0,255,0);
+    } else {
+        background(0); 
+           }
+    stroke(255);
+    strokeWeight(4);
+    noFill();
+    if(mouseX>150 && mouseX<250 && mouseY>150 && mouseY<250){
+        fill(250,0,255);
+    }
+    
+    rectMode(CENTER);
+    rect(200,200,100,100);
 }
 function mousePressed(){
-    background(153, 153, 255); //Limpia la pantalla
-    x=random(0,255);
-    y=random(0,255);
-    z=random(0,255);
-    print("El valor de x es",x,y,z);
+    if(mouseX>150 && mouseX<250 && mouseY>150 && mouseY<250){
+ on=!on;        
+      }
 }
+
+
+  //      fill(255,0,200);
+ //   }
+//  
+  //      if(on){        TODO ESTO ES EL on=!on ... es como poner -variable pero para booleanos el !
+ //           on=false;
+ //       }else {on=true;}
