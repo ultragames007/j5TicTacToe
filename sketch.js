@@ -1,38 +1,45 @@
+let bubbles = [];
+let maxbubbles = 10;
+let bubujaconmouse;
 
-let on = false;
 function setup() {
-  createCanvas(400, 400);
-  background(0);
+	createCanvas(400, 400);
+
+}
+
+function mousePressed() {
+	bubujaconmouse = new Bubble(mouseX, mouseY, random(20, 75));
+	//TENGO QUE CREAR UNA VARIABLE para poder usar el push.
+	//bubbles[0] = bubujaconmouse;
+	bubbles.push(bubujaconmouse);
 }
 
 function draw() {
-    //se puede poner if (on) xq on es true o false nomas. o if(on==true)
-    if(on)
-    {
-       background(0,255,0);
-    } else {
-        background(0); 
-           }
-    stroke(255);
-    strokeWeight(4);
-    noFill();
-    if(mouseX>150 && mouseX<250 && mouseY>150 && mouseY<250){
-        fill(250,0,255);
-    }
-    
-    rectMode(CENTER);
-    rect(200,200,100,100);
-}
-function mousePressed(){
-    if(mouseX>150 && mouseX<250 && mouseY>150 && mouseY<250){
- on=!on;        
-      }
+	background(0);
+	for (let i = 0; i < bubbles.length; i++) {
+		bubbles[i].move();
+		bubbles[i].show();
+	}
 }
 
+class Bubble { //Cuando creas la clase no se usan los ()
+	constructor(tx, ty, tsize) {
+		this.x = tx; //Cuando nos referimos a variables dentro de una clase hay que usar siempre "this.vaiable"
+		this.y = ty;
+		this.s = tsize;
+	}
+	// Para crear una funcion dentro de la clase no tengo q poner function nombre(), se hace asi:
+	move() {
+		this.x = this.x + random(-5, 5);
+		this.y = this.y + random(-5, 5);
+	}
 
-  //      fill(255,0,200);
- //   }
-//  
-  //      if(on){        TODO ESTO ES EL on=!on ... es como poner -variable pero para booleanos el !
- //           on=false;
- //       }else {on=true;}
+	show() {
+		stroke(255);
+		strokeWeight(4);
+		fill(random(0, 255), 0, random(0, 255));
+		ellipse(this.x, this.y, this.s);
+
+	}
+
+}
