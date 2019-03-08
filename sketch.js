@@ -1,45 +1,32 @@
-let bubbles = [];
-let maxbubbles = 10;
-let bubujaconmouse;
-
-function setup() {
-	createCanvas(400, 400);
-
+let area;
+let xoc= [2,2,2,2,2,2,2,2,2]; // 1 es cruz 0 es circulo.
+let machineturn=0;
+//let randompick;
+function preload() {
+    imgx =  loadImage("images/x.png");
+    imgo =  loadImage("images/o.png");
 }
 
-function mousePressed() {
-	bubujaconmouse = new Bubble(mouseX, mouseY, random(20, 75));
-	//TENGO QUE CREAR UNA VARIABLE para poder usar el push.
-	//bubbles[0] = bubujaconmouse;
-	bubbles.push(bubujaconmouse);
+function setup() {
+  createCanvas(603, 603);
+  background(255, 255, 255);
+  crearTablero();
 }
 
 function draw() {
-	background(0);
-	for (let i = 0; i < bubbles.length; i++) {
-		bubbles[i].move();
-		bubbles[i].show();
-	}
+turnoMaquina();
+
 }
 
-class Bubble { //Cuando creas la clase no se usan los ()
-	constructor(tx, ty, tsize) {
-		this.x = tx; //Cuando nos referimos a variables dentro de una clase hay que usar siempre "this.vaiable"
-		this.y = ty;
-		this.s = tsize;
-	}
-	// Para crear una funcion dentro de la clase no tengo q poner function nombre(), se hace asi:
-	move() {
-		this.x = this.x + random(-5, 5);
-		this.y = this.y + random(-5, 5);
-	}
+function crearTablero() {
+  strokeWeight(10); //hace todas las lineas gordas
+  line(0, 201, 603, 201);
+  line(0, 402, 603, 402);
+  line(201, 0, 201, 603);
+  line(402, 0, 402, 603);
+}
 
-	show() {
-		stroke(255);
-		strokeWeight(4);
-		fill(random(0, 255), 0, random(0, 255));
-		ellipse(this.x, this.y, this.s);
-
-	}
-
+function mousePressed() {
+areaFinder();
+ponerPieza()
 }
