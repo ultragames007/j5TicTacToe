@@ -2,7 +2,11 @@ let i=0;
 function ponerPieza()
 {
     machineturn=0;
-    while(machineturn==0 && xoc.every(pfaltaespacio)== false){
+    let checkforhumanerror=1;
+    checkforhumanerror=area-1;
+    // print("Valor de checkfhe",checkforhumanerror) // DEBUGGING
+    
+    while(machineturn==0 && xoc.every(pfaltaespacio) == false && xoc[checkforhumanerror] == 2 ) {
     if (area==1)   //Area 1
     {
         i=0;
