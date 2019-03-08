@@ -1,7 +1,7 @@
 let i=0;
 function ponerPieza()
 {
-    machineturn=0;
+   // machineturn=0;       // SI SE ROMPE TODO PONER ESTA LINEA.
     let checkforhumanerror=1;
     checkforhumanerror=area-1;
     // print("Valor de checkfhe",checkforhumanerror) // DEBUGGING

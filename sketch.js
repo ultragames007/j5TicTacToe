@@ -9,17 +9,17 @@ function preload() {
 
 function setup() {
   createCanvas(603, 603);
-  background(255, 255, 255);
   crearTablero();
 }
 
 function draw() {
-turnoMaquina();
-
+    turnoMaquina();
 }
 
 function crearTablero() {
+  background(255, 255, 255);
   strokeWeight(10); //hace todas las lineas gordas
+  stroke(0);
   line(0, 201, 603, 201);
   line(0, 402, 603, 402);
   line(201, 0, 201, 603);
@@ -27,6 +27,10 @@ function crearTablero() {
 }
 
 function mousePressed() {
-areaFinder();
-ponerPieza()
+    areaFinder();
+    ponerPieza();
+    checkforvictory();
+    playagain();
+    fill(255,0,250);
+   // print(mouseX,mouseY); // For debbugging.
 }

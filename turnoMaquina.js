@@ -3,7 +3,7 @@ var randompick;
 function turnoMaquina ()
 {
     while(machineturn==1 && xoc.every(pfaltaespacio) == false){
-     print("XOC antes de que la maquina elija",xoc); //DEBUGGING.
+    // print("XOC antes de que la maquina elija",xoc); //DEBUGGING.
         
      pickrandomspot();
         
@@ -70,7 +70,7 @@ function turnoMaquina ()
         xoc[i]=0;
         machineturn=0;
     }
-        print(xoc); //DEBUGGING
+      //  print(xoc); //DEBUGGING
     }
 }
 
@@ -83,8 +83,8 @@ function pickrandomspot(){
         //print("lo que printea si hay espacio",xoc.every(pfaltaespacio));
     }
     area=randompick;
-  print("Valor de Randompick",randompick);
-  print("Nueva area sin usar",area);
+  //print("Valor de Randompick",randompick); //Debugging
+  //print("Nueva area sin usar",area);  //Debugging
 
 
 }
