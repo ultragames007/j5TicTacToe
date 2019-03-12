@@ -1,4 +1,4 @@
-function victoryReset()
+function victoryReset()  // Should be called reset lol cause its used to reset all cases ...
 {
  machineturn =2 ;
  xoc= [2,2,2,2,2,2,2,2,2];

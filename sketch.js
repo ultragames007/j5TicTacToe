@@ -14,6 +14,8 @@ function setup() {
 
 function draw() {
     turnoMaquina();
+    checkfordefeat();  // Check for defeat lo corro aca xq sino al hacer click, primero pone la pieza luego evalua.
+    checkfortie();
 }
 
 function crearTablero() {
@@ -30,6 +32,7 @@ function mousePressed() {
     areaFinder();
     ponerPieza();
     checkforvictory();
+//    checkfordefeat();
     playagain();
     fill(255,0,250);
    // print(mouseX,mouseY); // For debbugging.
