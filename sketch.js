@@ -37,3 +37,6 @@ function mousePressed() {
     fill(255,0,250);
    // print(mouseX,mouseY); // For debbugging.
 }
+
+// EN Smart Cookie Logic las lineas 27,28 se pueden activar/desactivar para hacerlo inteligente 100% de los casos o no
+// El porcentage de error se ajusta en la linea 124.

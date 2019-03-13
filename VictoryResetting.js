@@ -2,6 +2,7 @@ function victoryReset()  // Should be called reset lol cause its used to reset a
 {
  machineturn =2 ;
  xoc= [2,2,2,2,2,2,2,2,2];
+ primerturno = true;
     stroke(0,0,255);
     fill (0,255,0);
     ellipse(500,550,50,25);

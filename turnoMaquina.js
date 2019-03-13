@@ -5,7 +5,8 @@ function turnoMaquina ()
     while(machineturn==1 && xoc.every(pfaltaespacio) == false){
     // print("XOC antes de que la maquina elija",xoc); //DEBUGGING.
         
-     pickrandomspot();
+    // pickrandomspot();      // Aca vamos a insertar el codigo nuevo.
+       checkforplay();        // Si se rompe remover esto.
         
      if (area==1)   //Area 1
     {
